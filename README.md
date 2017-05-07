@@ -7,7 +7,7 @@ Requires at least Firefox 54.
 ---
 ## To Build
 
-Place icon files `19.png` and `38.png`, of 19x19 pixels, and 38x38 pixels, respectively.  
+Place icon files `19.png` and `38.png`, of 19x19 pixels, and 38x38 pixels, respectively at the top-level.  
 I have not included any because of licensing issues with the ones I use.
 
 ### With `build.py`
