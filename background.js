@@ -29,7 +29,7 @@ function downloadAllImageTabs()
 
 function isImageTab(tab)
 {
-    let url = tab.url;
+    let url = tab.url.toLowerCase();
 
     return url.endsWith(".png")
         || url.endsWith(".jpeg")
