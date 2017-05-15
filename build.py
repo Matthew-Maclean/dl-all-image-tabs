@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import os
 import zipfile
 
@@ -13,10 +15,12 @@ def main():
 
     files = []
 
-    for (dirpath, _, filenames) in os.walk(folder):
+    for (dirpath, dirs, filenames) in os.walk(folder):
+        dirs[:] = [d for d in list(dirs) if not d.startswith('.')]
+
         for filename in filenames:
             path = os.path.relpath(os.path.join(dirpath, filename))
-
+            
             if path != output and path != self_file:
                 files.append(path)
 
