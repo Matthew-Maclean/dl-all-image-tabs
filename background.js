@@ -19,12 +19,35 @@ function downloadAllImageTabs()
     {
         for (var tab of tabs)
         {
+            processTab(tab);
+        }
+    });
+}
+
+function processTab(tab)
+{
+    if (tab.url === "about:blank") // may be a zombie!
+    {
+        let id = tab.id;
+
+        browser.tabs.reload(id).then(function()
+        {
             if (isImageTab(tab))
             {
                 downloadTab(tab);
             }
+        }, function()
+        {
+            console.log("error while reloading tab");
+        })
+    }
+    else
+    {
+        if (isImageTab(tab))
+        {
+            downloadTab(tab);
         }
-    });
+    }
 }
 
 function isImageTab(tab)
