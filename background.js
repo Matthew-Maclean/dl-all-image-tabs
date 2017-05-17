@@ -39,7 +39,7 @@ function processTab(tab)
         }, function()
         {
             console.log("error while reloading tab");
-        })
+        });
     }
     else
     {
